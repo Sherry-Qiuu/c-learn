@@ -1,5 +1,7 @@
 # C 语言 2 天冲刺 · 面向 C++ 背景 · 嵌入式（STM32）方向
 
+> 在线仓库：<https://github.com/Sherry-Qiuu/c-learn> · MIT License
+
 你的环境**已经全部就绪，本包不需要安装任何东西**：
 
 | 工具 | 位置 / 版本 |
@@ -127,6 +129,31 @@ MinGW 对 Sanitizer 支持不完整。这个目标在 MSVC/WSL/Linux 上前提�
 
 两个项目的**参考答案都已经过编译+运行验证**，你写完之后如果 `make run` 卡住，
 可以对照 `contact.c` / `gpio.c` / `irq.c` 文件末尾的答案块逐段比对。
+
+---
+
+## 同步到 GitHub
+
+这个目录已经是 git 仓库，远程指向 <https://github.com/Sherry-Qiuu/c-learn>。
+写完一个练习想存一次，三条命令：
+
+```bash
+cd /d/c-learn
+git add -A
+git commit -m "完成 ex03：数组退化"
+git push
+```
+
+几点说明：
+
+- **编译产物不会进仓库。** `.gitignore` 已经排掉 `build/`、`*.exe`、`*.o`、`*.d`，
+  提交前可以 `git status` 确认一遍。
+- **提交身份用的是 GitHub 的 noreply 邮箱**（`309590290+Sherry-Qiuu@users.noreply.github.com`），
+  这样 commit 能正确算在你账号名下，又不会把你的私人邮箱公开在一个 public 仓库里。
+  这是本仓库的局部设置（`git config --local`），不影响你其他项目。
+- **换行符固定 LF**（见 `.gitattributes`）。Makefile 用 CRLF 会让 `make` 报
+  `missing separator`，所以仓库里统一 LF，VS Code 里看起来没区别。
+- 提交信息用中文完全没问题，`git commit` 支持 UTF-8。
 
 ---
 
