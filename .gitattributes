@@ -1,0 +1,12 @@
+# 统一用 LF 换行。
+#
+# 为什么？Makefile 用 CRLF 会让 make 报 "missing separator"；
+# 而且 Windows/Linux 混着改会出现「整个文件都被改了」的假 diff。
+# 仓库里固定 LF，编辑器（VS Code）显示起来没有区别。
+* text=auto eol=lf
+
+# 二进制文件不做换行符转换
+*.png  binary
+*.jpg  binary
+*.pdf  binary
+*.xlsx binary

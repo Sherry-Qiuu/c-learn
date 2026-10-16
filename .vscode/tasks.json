@@ -1,0 +1,93 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "C: 编译当前文件",
+      "type": "shell",
+      "command": "gcc",
+      "args": [
+        "-std=c17",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-g",
+        "-O0",
+        "${file}",
+        "-o",
+        "${workspaceFolder}/build/${fileBasenameNoExtension}.exe"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      }
+    },
+    {
+      "label": "C: 生成汇编",
+      "type": "shell",
+      "command": "gcc",
+      "args": [
+        "-std=c17",
+        "-O0",
+        "-S",
+        "${file}",
+        "-o",
+        "${workspaceFolder}/build/${fileBasenameNoExtension}.s"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "C: 项目 contact",
+      "type": "shell",
+      "command": "mingw32-make",
+      "args": [
+        "clean",
+        "all",
+        "run"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/projects/contact"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "C: 项目 gpio_sim",
+      "type": "shell",
+      "command": "mingw32-make",
+      "args": [
+        "clean",
+        "all",
+        "run"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/projects/gpio_sim"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    }
+  ]
+}

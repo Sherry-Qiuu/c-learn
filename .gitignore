@@ -1,0 +1,29 @@
+# =============================================================================
+# .gitignore —— 只提交「人写的东西」，编译产物一律不进仓库
+# =============================================================================
+
+# ---- 编译产物（根 Makefile 的输出目录）----
+build/
+
+# ---- 编译产物（项目里就地生成的，如 projects/contact）----
+*.exe
+*.o
+*.obj
+*.d
+*.a
+*.lib
+*.so
+*.dll
+*.out
+
+# ---- 运行期生成的数据文件（ex11 文件 I/O 练习）----
+exercises/*.txt
+exercises/*.csv
+exercises/*.bin
+
+# ---- 编辑器 / 系统 ----
+.vscode/settings.json
+*.code-workspace
+.DS_Store
+Thumbs.db
+Desktop.ini
